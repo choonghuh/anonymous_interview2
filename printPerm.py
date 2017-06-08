@@ -22,4 +22,8 @@ def printPerm(s1, s2, permutations=None):
 			printPerm(''.join(l2), s2 + l1[index], permutations)
 
 if __name__ == '__main__':
-	printPerm(sys.argv[1],'')
+	if len(sys.argv) != 2:
+		sys.exit("Usage: python printPerm.py <string>")
+	permutations = []
+	printPerm(sys.argv[1],'',permutations)
+	print( str(len(permutations)) + ' Unique instances')
